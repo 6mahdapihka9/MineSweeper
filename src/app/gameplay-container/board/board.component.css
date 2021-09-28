@@ -1,0 +1,9 @@
+.rows, .fields, .fields *{
+  display: flex;
+}
+.rows{
+  flex-direction: row;
+}
+.fields, .fields *{
+  flex-direction: column;
+}

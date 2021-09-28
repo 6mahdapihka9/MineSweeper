@@ -1,1 +1,14 @@
-<p>board works!</p>
+<div *ngIf="board">
+  <div class="rows" *ngFor="let arrF of board.fields">
+    <div class="fields" *ngFor="let F of arrF">
+<!--      -->
+      <app-field
+        (mineMarked)="minesLeftChange($event)"
+        (mineExploded)="mineExploded()"
+        (fieldOpened)="spacesLeftChange($event)"
+        [id]="F.id"
+        [field]="F">
+      </app-field>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,15 @@
-<p>board-form works!</p>
+<form (submit)="submit()">
+  <div class="input-group" data-title="(min 10, max 40)">
+    <label>Width</label>
+    <input type="number" value="10" (input)="changeWidth($event)" [value]="width">
+  </div>
+  <div class="input-group" data-title="(min 10, max 20)">
+    <label>Height</label>
+    <input type="number" value="10" (input)="changeHeight($event)" [value]="height">
+  </div>
+  <div class="input-group" data-title="(min 10, max w*h/2)">
+    <label>Mines</label>
+    <input type="number" value="11" (input)="changeMines($event)" [value]="mines">
+  </div>
+  <input type="submit">
+</form>

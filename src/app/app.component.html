@@ -1,0 +1,15 @@
+<app-gameplay-container
+  class="content"
+  *ngIf="gameBuilt && board; else boardForm"
+  [board]="board"
+  [amountOfFields]="amountOfFields"
+  [minesTotal]="board.mines"
+  (newBoard)="newBoard()">
+</app-gameplay-container>
+
+<ng-template #boardForm>
+  <app-board-form
+    class="content"
+    (tryToBuildBoard)="setBoard($event)">
+  </app-board-form>
+</ng-template>
