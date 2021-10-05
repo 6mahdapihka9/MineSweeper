@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   {path: 'MineSweeper/game', component: GameComponent, data: { animation: "game" }},
   {path: 'MineSweeper/statistics', component: StatisticsComponent, data: { animation: "statistics" }},
   {path: 'MineSweeper/records', component: RecordsComponent, data: { animation: "records" }},
-  {path: 'MineSweeper/**', component: GameComponent, data: { animation: "game" }}
+  {path: '**', redirectTo: 'MineSweeper/game'}
 ]
 
 @NgModule({
