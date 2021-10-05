@@ -1,15 +1,7 @@
-<app-gameplay-container
-  class="content"
-  *ngIf="gameBuilt && board; else boardForm"
-  [board]="board"
-  [amountOfFields]="amountOfFields"
-  [minesTotal]="board.mines"
-  (newBoard)="newBoard()">
-</app-gameplay-container>
+<app-header></app-header>
 
-<ng-template #boardForm>
-  <app-board-form
-    class="content"
-    (tryToBuildBoard)="setBoard($event)">
-  </app-board-form>
-</ng-template>
+<main [@routeAnimation]="o.activatedRouteData.animation">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+
+<app-footer id="footer-comp"></app-footer>

@@ -1,11 +1,9 @@
-.content{
+main{
   display: flex;
-  /*justify-content: center;*/
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 20px;
+  flex: 1 0 auto;
   margin: 50px 0;
-  border-radius: 10px;
-  background-color: #b2d7b2;
 }
+

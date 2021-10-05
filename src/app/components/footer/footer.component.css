@@ -1,0 +1,12 @@
+footer{
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #374448;
+  color: ghostwhite;
+}
+footer *{
+  font-size: 15px!important;
+}

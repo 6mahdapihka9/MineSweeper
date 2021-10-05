@@ -5,5 +5,5 @@ export interface Field {
   isMarked: boolean;
   minesAround?:number;
   isLeftClicked?:boolean;
-  id: string
+  id: string;
 }

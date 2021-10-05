@@ -1,0 +1,12 @@
+button{
+  width: 25px;
+  height: 25px;
+  font-weight: 900;
+  font-size: 15px;
+}
+button:disabled{
+  background-color: rgba(0, 0, 0, 1);
+  color: initial;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+

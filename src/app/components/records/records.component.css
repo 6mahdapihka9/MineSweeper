@@ -1,0 +1,10 @@
+table{
+  background-color:   ghostwhite;
+}
+tr, th, td{
+  margin: 0;
+}
+td{
+  padding: 10px;
+  border: 1px solid darkgray;
+}

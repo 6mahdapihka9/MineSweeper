@@ -1,14 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {CommonModule} from "@angular/common";
 
-import { AppComponent } from './app.component';
-import { BoardFormComponent } from './board-form/board-form.component';
-import { GameplayContainerComponent } from './gameplay-container/gameplay-container.component';
-import { BoardComponent } from './gameplay-container/board/board.component';
-import { FieldComponent } from './gameplay-container/board/field/field.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { MinesCounterComponent } from './gameplay-container/mines-counter/mines-counter.component';
-import { AnnouncerComponent } from './gameplay-container/announcer/announcer.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormsModule } from "@angular/forms";
+
+import { Routes, RouterModule} from "@angular/router";
+
+import { RecordsService } from './service/records.service';
+import { StatisticsService } from './service/statistics.service';
+
+import {AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { RecordsComponent } from './components/records/records.component';
+import { GameComponent } from './components/game/game.component';
+import {  BoardFormComponent } from './components/game/board-form/board-form.component';
+import {  GameplayContainerComponent } from './components/game/gameplay-container/gameplay-container.component';
+import {    MinesCounterComponent } from './components/game/gameplay-container/mines-counter/mines-counter.component';
+import {    AnnouncerComponent } from './components/game/gameplay-container/announcer/announcer.component';
+import {    BoardComponent } from './components/game/gameplay-container/board/board.component';
+import {      FieldComponent } from './components/game/gameplay-container/board/field/field.component';
+
+import { FooterComponent } from './components/footer/footer.component';
+
+import { environment } from "../environments/environment";
+
+const appRoutes: Routes = [
+  {path: '', component: GameComponent, data: { animation: "game" }},
+  {path: 'statistics', component: StatisticsComponent, data: { animation: "statistics" }},
+  {path: 'records', component: RecordsComponent, data: { animation: "records" }},
+  {path: '**', component: GameComponent, data: { animation: "game" }}
+]
 
 @NgModule({
   declarations: [
@@ -19,12 +47,29 @@ import { AnnouncerComponent } from './gameplay-container/announcer/announcer.com
     FieldComponent,
     StatisticsComponent,
     MinesCounterComponent,
-    AnnouncerComponent
+    AnnouncerComponent,
+    RecordsComponent,
+    HeaderComponent,
+    FooterComponent,
+    GameComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    // firestore
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    // routes
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    RecordsService,
+    StatisticsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

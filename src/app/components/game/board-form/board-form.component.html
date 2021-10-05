@@ -1,0 +1,28 @@
+<form>
+
+  <div class="input-group" >
+    <label>Login</label>
+    <input type="text" [(ngModel)]="name" name="login" placeholder="anonymous">
+  </div>
+  <span class="info" [ngStyle]="{opacity: '1'}">Login is not necessary</span>
+
+  <div class="input-group" data-title="(min 10, max 40)">
+    <label>Width</label>
+    <input type="number" value="10" (input)="changeWidth($event)" [value]="width">
+  </div>
+  <span class="error" [ngStyle]="{opacity: isWidthValid? '0' : '1'}">Width value invalid (min 10, max 40)</span>
+
+  <div class="input-group" data-title="(min 10, max 20)">
+    <label>Height</label>
+    <input type="number" value="10" (input)="changeHeight($event)" [value]="height">
+  </div>
+  <span class="error" [ngStyle]="{opacity: isHeightValid? '0' : '1'}">Height value invalid (min 10, max 20)</span>
+
+  <div class="input-group" data-title="(min 10, max w*h/2)">
+    <label>Mines</label>
+    <input type="number" value="20" (input)="changeMines($event)" [value]="mines">
+  </div>
+  <span class="error" [ngStyle]="{opacity: isMinesValid? '0' : '1'}">Mines value invalid (min 10, max w*h/2)</span>
+
+  <button [disabled]="!isWidthValid || !isHeightValid || !isMinesValid" (click)="submit($event)">Start game</button>
+</form>

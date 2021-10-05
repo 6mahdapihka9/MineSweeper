@@ -1,0 +1,23 @@
+
+<div @insertRemoveBoard
+     *ngIf="gameBuilt && board; else boardForm">
+  <app-gameplay-container
+    class="game"
+    [board]="board"
+    [amountOfFields]="amountOfFields"
+    [minesTotal]="board.mines"
+    [minesLeft]="board.mines"
+    [userName]="userName"
+    (newBoard)="newBoard()">
+  </app-gameplay-container>
+</div>
+
+<ng-template #boardForm>
+  <app-board-form
+    class="game"
+    @insertRemoveForm
+    (tryToBuildBoard)="setBoard($event)"
+    (setUserName)="setUserName($event)">
+  </app-board-form>
+</ng-template>
+

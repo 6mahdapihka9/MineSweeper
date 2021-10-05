@@ -1,0 +1,28 @@
+<table>
+  <thead>
+  <tr>
+    <td>Width</td>
+    <td>Height</td>
+    <td>Mines</td>
+    <td>Time</td>
+    <td>Player</td>
+<!--    <td>date</td>-->
+    <td>Result</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let statistic of SS.statistics">
+    <td>{{ statistic.payload.doc.data().width }}</td>
+    <td>{{ statistic.payload.doc.data().height }}</td>
+    <td>{{ statistic.payload.doc.data().mines }}</td>
+    <td>{{ statistic.payload.doc.data().time }}</td>
+    <td>{{ statistic.payload.doc.data().playerName? statistic.payload.doc.data().playerName : '--' }}</td>
+<!--    <td>{{ statistic.payload.doc.data().date | date}}</td>-->
+    <td [ngStyle]="{
+      color: statistic.payload.doc.data().lost? 'crimson' : 'forestgreen'
+    }">
+      {{ statistic.payload.doc.data().lost? 'Lost' : 'Won' }}
+    </td>
+  </tr>
+  </tbody>
+</table>

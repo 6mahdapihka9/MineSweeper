@@ -1,0 +1,12 @@
+header{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*align-items: center;*/
+  position: relative;
+  /*background-color: #e1dac9;*/
+  background-color: #374844;
+  color: ghostwhite;
+  text-decoration: underline;
+}

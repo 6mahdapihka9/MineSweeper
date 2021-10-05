@@ -1,0 +1,35 @@
+
+<button
+  [ngStyle]="{
+      backgroundColor: field?.isLeftClicked? 'lightsteelblue' : 'burlywood',
+
+      color: !field.minesAround? 'black' :
+       field.minesAround < 2? 'rgb(0,0,255)' :
+       field.minesAround < 3? 'rgb(0,128,0)' :
+       field.minesAround < 4? 'rgb(255,0,0)' :
+       field.minesAround < 5? 'rgb(0,0,128)' :
+       field.minesAround < 6? 'rgb(128,0,0)' :
+       field.minesAround < 7? 'rgb(0,128,128)' :
+       field.minesAround < 8? 'rgb(0,0,0)' : 'rgb(128,128,128)'
+      }"
+  id="{{id}}"
+  (click)="leftClick()"
+  (contextmenu)="rightClick()"
+  [disabled]="field?.isLeftClicked">
+  {{
+    field.minesAround !== undefined?
+      field.isLeftClicked?
+        field.isMined?
+          '💣'
+        :
+          field.minesAround > 0?
+            field.minesAround
+          :
+            ''
+      :
+        field.isMarked? '🚩' : ''
+    :
+      false
+  }}
+</button>
+

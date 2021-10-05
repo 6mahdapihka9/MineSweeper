@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <td>Width</td>
+      <td>Height</td>
+      <td>Mines</td>
+      <td>Fastest Time</td>
+      <td>Player</td>
+<!--      <td>date</td>-->
+      <td>Average Time</td>
+      <td>Games</td>
+<!--      <td>Winrate</td>-->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of RS.records">
+      <td>{{ record.payload.doc.data().width }}</td>
+      <td>{{ record.payload.doc.data().height }}</td>
+      <td>{{ record.payload.doc.data().mines }}</td>
+      <td>{{ record.payload.doc.data().fastestTime }}</td>
+      <td>{{ record.payload.doc.data().playerName? record.payload.doc.data().playerName : '--' }}</td>
+<!--      <td>{{ record.payload.doc.data().date | date}}</td>-->
+      <td>{{ record.payload.doc.data().averageTime }}</td>
+      <td>{{ record.payload.doc.data().amountOfGames }}</td>
+<!--      <td>{{ record.payload.doc.data().winrate }} %</td>-->
+    </tr>
+  </tbody>
+</table>
