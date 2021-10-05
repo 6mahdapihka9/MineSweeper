@@ -10,7 +10,13 @@ MIT
 @angular/fire
 MIT
 
+@angular/forms
+MIT
+
 @angular/platform-browser
+MIT
+
+@angular/router
 MIT
 
 @babel/runtime
@@ -84,6 +90,9 @@ firebase/compat/auth
 firebase/compat/firestore
 
 firebase/compat/storage
+
+ngx-animations
+MIT
 
 rxjs
 Apache-2.0
