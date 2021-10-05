@@ -32,10 +32,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { environment } from "../environments/environment";
 
 const appRoutes: Routes = [
-  {path: 'MineSweeper/game', component: GameComponent, data: { animation: "game" }},
-  {path: 'MineSweeper/statistics', component: StatisticsComponent, data: { animation: "statistics" }},
-  {path: 'MineSweeper/records', component: RecordsComponent, data: { animation: "records" }},
-  {path: '**', redirectTo: 'MineSweeper/game'}
+  {path: '', component: GameComponent, data: { animation: "game" }},
+  {path: 'statistics', component: StatisticsComponent, data: { animation: "statistics" }},
+  {path: 'records', component: RecordsComponent, data: { animation: "records" }},
+  {path: '**', redirectTo: ''}
 ]
 
 @NgModule({
